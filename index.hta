@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            // 予定の画面サイズを指定する。
+            var width = 300;
+            var height = 300;
+            window.resizeTo( width, height );
+        </script>
+        <HTA:APPLICATION
+            ID="thisHTA"
+            APPLICATIONNAME="bear"
+            BORDER="dialog"
+            CONTEXTMENU="no"
+            ICON="favicon.ico"
+            INNERBORDER="no"
+            MAXIMIZEBUTTON="no"
+            MINIMIZEBUTTON="no"
+            SCROLL="no"
+            SELECTION="no"
+            SINGLEINSTANCE="yes"
+            NAVIGABLE="yes"
+            VERSION="1.0.0"
+        />
+        <script>
+            // アプリケーションのメイン画面に遷移する。
+            window.setTimeout( function () {
+                window.location.href = './index.html'
+                                     + '?width=' + width
+                                     + '&height=' + height
+                                     + '&args=' + thisHTA.commandLine;
+            }, 0 );
+        </script>
+    </head>
+</html>
